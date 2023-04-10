@@ -56,7 +56,7 @@
       <div class="container container-flex">
         <h1>
 
-
+</div>
         <?php
 session_start();
 if(!isset($_SESSION['nombre'])){
@@ -86,3 +86,9 @@ Bienvenido <?php echo $_SESSION['nombre']; ?>
    
   </body>
 </html>
+<?php
+if(!isset($_SERVER['HTTP_REFERER']) || $_SERVER['HTTP_REFERER'] == "") {
+  header("Location: index.php");
+  exit();
+}
+?>
