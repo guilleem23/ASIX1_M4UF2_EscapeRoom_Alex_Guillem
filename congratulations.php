@@ -43,12 +43,12 @@
         
     </div>
     
-    <?php
-if(!isset($_SERVER['HTTP_REFERER']) || $_SERVER['HTTP_REFERER'] == "") {
-  header("Location: index.php");
-  exit();
-}
-?>
+                                                                                                                                                    <?php
+                                                                                                                    if(!isset($_SERVER['HTTP_REFERER']) || $_SERVER['HTTP_REFERER'] == "") {
+                                                                                                                                              header("Location: index.php");
+                                                                                                                                                      exit();
+                                                                                                                                                        }
+                                                                                                                                                            ?>
    
     <div class="container-fluid p-0 nav-bar">
         <nav class="navbar navbar-expand-lg bg-none navbar-dark py-0">

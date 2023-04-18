@@ -14,3 +14,14 @@ if(!isset($_SESSION['nombre'])){
 }
 ?>
 
+
+
+<?php
+session_start();
+if(!isset($_SESSION['inicio'])){
+  header('Location: index.php');
+  exit();
+}
+?>
+
+

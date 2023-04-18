@@ -119,5 +119,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
  
     <script src="js/main.js"></script>
+                                                                                                            <?php
+                                                                                                                            if(!isset($_SERVER['HTTP_REFERER']) || $_SERVER['HTTP_REFERER'] == "") {
+                                                                                                                                          header("Location: index.php");
+                                                                                                                                                          exit();
+                                                                                                                                                            }
+                                                                                                                                                            ?>      
 </body>
 </html>

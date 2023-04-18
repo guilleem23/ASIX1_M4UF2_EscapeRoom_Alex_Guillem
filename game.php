@@ -16,7 +16,14 @@
     <link rel="stylesheet" href="dist/css/main.css" />
   </head>
   <body>
-      
+  <?php
+  if (isset($_POST['token']) && $_POST['token'] === "mi_token_secreto") {
+  // Procesar la lógica del juego aquí
+} else {
+  header("Location: index2.php");
+  exit();
+}
+ ?>
   
   <audio autoplay loop>
   <source src="img/miedo.mp3" type="audio/mp3">
@@ -1556,6 +1563,12 @@
             >
               <img src="assets/items/front-door-key.svg" alt />
             </label>
+                                                                                                                        <?php
+                                                                                                      if(!isset($_SERVER['HTTP_REFERER']) || $_SERVER['HTTP_REFERER'] == "") {
+                                                                                                            header("Location: index.php");
+                                                                                                                            exit();
+                                                                                                                                  }
+                                                                                                                          ?>
 
             <!-- FROM SECRET ROOM -->
             <label

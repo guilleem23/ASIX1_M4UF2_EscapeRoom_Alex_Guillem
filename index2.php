@@ -75,20 +75,22 @@ Bienvenido <?php echo $_SESSION['nombre']; ?>
         <img src="assets/landing/correr.gif" alt="SASSCAPE ROOM demo" />
 
         <p>
-          <a href="game.php" class="action-btn"
-            >Listo</a>
+        <form action="game.php" method="post">
+  <input type="hidden" name="token" value="mi_token_secreto">
+  <button type="submit" class="action-btn">Listo</button>
+</form>
+
           
         </p>
       </div>
     </header>
 
-    
+                                                                                                                          <?php
+                                                                                                                  if(!isset($_SERVER['HTTP_REFERER']) || $_SERVER['HTTP_REFERER'] == "") {
+                                                                                                                               header("Location: index.php");
+                                                                                                                                     exit();
+                                                                                                                                        }
+                                                                                                                              ?>    
    
   </body>
 </html>
-<?php
-if(!isset($_SERVER['HTTP_REFERER']) || $_SERVER['HTTP_REFERER'] == "") {
-  header("Location: index.php");
-  exit();
-}
-?>
